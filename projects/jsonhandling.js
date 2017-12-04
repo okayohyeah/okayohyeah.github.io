@@ -1,6 +1,6 @@
 function getUsername() {
 	var input_username = document.getElementById("input_username").value;
-	fetch("http://api.github.com/users/" + input_username)
+	fetch("https://api.github.com/users/" + input_username)
 	.then(function(response_obj) {
 		return response_obj.json();
 	})
