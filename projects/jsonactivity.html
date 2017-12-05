@@ -23,17 +23,17 @@
 			<li>
 				<div id="input_and_button">
 					<input type="text" id="input_username" name="username" placeholder="GitHub username">
-					<button type="button" onClick="getUsername()">Search</button>
+					<button type="button" id="button_id" onClick="getUsername()">Search</button>
 				</div>
 			</li>
 		</ul>
 	</header>
 
 	<main id="container">
-		<img id="pic" src="" alt="">
+		<a  id="a_pic" target="_blank"><img id="pic" src="" alt=""></a>
 		<h2>
 			<div id="name"></div>
-			<a id="username" target="_blank"></a>		
+			<div id="username"></div>		
 		</h2>
 
 		<svg aria-hidden="true" id="icon-location" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path id="fill-icon" fill-rule="evenodd"></path></svg>
@@ -54,7 +54,7 @@
 
 		<p>Once a valid username is typed and submitted, their profile will appear with their name, username, avatar, their location, the number of followers and avatars, and the number of users they are following along with their avatars.</p>
 
-		<p>If you want to visit the user's GitHub page, click onto their username.</p>
+		<p>To visit a user's GitHub page, click onto their avatar.</p>
 	</div>
 	
 	<footer>
