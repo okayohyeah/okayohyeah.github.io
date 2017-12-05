@@ -101,6 +101,7 @@ function getFollowing(url) {
 function showFollowing(url) {
 	fetch(url)
 	.then(function(show_obj) {
+		return show_obj.json();
 	})
 	.then(function(obj) {
 		obj.forEach(function(item,index) {
