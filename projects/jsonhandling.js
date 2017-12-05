@@ -15,10 +15,6 @@ function getUsername() {
 	})
 	.then(function(obj) {
 
-		//check returned obj
-		console.log(obj);
-
-		// otherwise username exists and render the following
 		document.getElementById("pic").src = obj.avatar_url;
 		document.getElementById("a_pic").setAttribute("href", "http://www.github.com/" + obj.login);
 		document.getElementById("username").innerText = "@" +obj.login;
@@ -42,7 +38,7 @@ function getUsername() {
 			document.getElementById("followers").innerText = obj.followers + " followers";
 		} else if (obj.followers == 1) {
 			document.getElementById("followers").innerText = obj.followers + " follower";
-		} else {
+		} else if (obj.followers == 0) {
 			document.getElementById("followers").innerText = "No followers";
 		}
 		
@@ -50,8 +46,8 @@ function getUsername() {
 			document.getElementById("following").innerText = "Following " + obj.following + " users";
 		} else if (obj.following == 1) {
 			document.getElementById("following").innerText = "Following " + obj.following + " user";
-		} else {
-			document.getElementById("followers").innerText = "Not following any users";
+		} else if (obj.following == 0) {
+			document.getElementById("following").innerText = "Not following any users";
 		}
 
 		getFollowers(obj.followers_url);
@@ -80,6 +76,8 @@ function showFollowers(url) {
 		return show_obj.json();
 	})
 	.then(function(obj) {
+		// clear follower avatars from previous search
+		document.getElementById("followers_avatar").innerText = "";
 		obj.forEach(function(item,index) {
 			var span = document.createElement("span");
 			span.innerHTML = '<a href="http://www.github.com/'+ obj[index].login + '" target="_blank">' + '<img src="' + obj[index].avatar_url + '" id="f-icon" width=6% height=6% alt="follower avatar" hspace=1%/>';
@@ -104,6 +102,8 @@ function showFollowing(url) {
 		return show_obj.json();
 	})
 	.then(function(obj) {
+		// clear following avatars from previous search
+		document.getElementById("following_avatar").innerText = "";
 		obj.forEach(function(item,index) {
 			var span = document.createElement("span");
 			span.innerHTML = '<a href="http://www.github.com/'+ obj[index].login + '" target="_blank">' + '<img src="' + obj[index].avatar_url + '" id="f-icon" width=6% height=6% alt="follower avatar" hspace=1%/>';
