@@ -1,3 +1,12 @@
+// trigger button click event with enter key clicked in input textbox 
+document.getElementById("input_username")
+	.addEventListener("keyup", function(event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			document.getElementById("button_id").click();
+		}
+	});
+
 function getUsername() {
 	var input_username = document.getElementById("input_username").value;
 	fetch("https://api.github.com/users/" + input_username)
