@@ -13,8 +13,7 @@ function getUsername() {
 	.then(function(response_obj) {
 		return response_obj.json();
 	})
-	.then(function(obj) {
-
+	.then(function(obj) {		
 		document.getElementById("pic").src = obj.avatar_url;
 		document.getElementById("a_pic").setAttribute("href", "http://www.github.com/" + obj.login);
 		document.getElementById("username").innerText = "@" +obj.login;
