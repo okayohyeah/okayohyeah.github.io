@@ -1,5 +1,5 @@
 // trigger button click event with enter key clicked in input textbox 
-document.getElementById("input_username")
+document.getElementById("search_box")
 	.addEventListener("keyup", function(event) {
 		event.preventDefault();
 		if (event.keyCode === 13) {
@@ -8,7 +8,7 @@ document.getElementById("input_username")
 	});
 
 function getUsername() {
-	var input_username = document.getElementById("input_username").value;
+	var input_username = document.getElementById("search_box").value;
 	fetch("https://api.github.com/users/" + input_username)
 	.then(function(response_obj) {
 		return response_obj.json();
