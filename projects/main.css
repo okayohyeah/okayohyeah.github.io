@@ -1,115 +1,108 @@
+* {
+	/* defines width and height of an element : include padding + border + content in element's total width and heigth*/
+	box-sizing: border-box;
+}
+
 body {
 	margin: 0;
-		/* fallback for old browsers */
-	background: #D3959B;  
-	/* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: -webkit-linear-gradient(left, #BFE6BA, #D3959B);
-	background: -o-linear-gradient(left, #BFE6BA, #D3959B);
-	background: linear-gradient(to right, #BFE6BA, #D3959B);
-	font-family:'Questrial', sans-serif;; 
+	background-color: white;
+	font-family: 'Muli', 'Open Sans', Arial, sans-serif;
+	min-width: 1020px;
+	word-wrap: break-word;
+	line-height: 1.5;
+	font-size: 14px;
 }
 
 nav {
 	margin: 0;
-	color: white;
-	background-color: black;	
+	background-color: #24292e;	
+	z-index: 1;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	font-size: 14px;
 }
 
-ul {
+nav ul {
 	display: flex;
-	padding: 0;
+	padding-right: 60px;
+	padding-left: 60px;
 	list-style: none;
-	
-	margin: 0;
-
-	height: 60px;
+	margin-top: 0;
+	margin-bottom: 0;
 	/* aligns everything in center on vertical axis*/
 	align-items: center;
+	color: white;
+}
 
-	/*1em T & B - 3em R & L */
-	padding: 1em 3em; 
-	background-color: black;
+nav ul li {
+	font-size: 14px;
+	font-weight: 600;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+nav a:link, nav a:hover, nav a:visited, nav a:active {
+	text-decoration: none;
+	color: white;
 }
 
 #logo {
 	fill: currentColor;
 	color: #fff;
+	margin-bottom: -3px;
 }
 
 #text {
 	/* both margin autos center text in the middle of nav bar */
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 2em;
 	letter-spacing: .2em;
   word-spacing: .2em
 }
 
-#text a:link, a:hover, a:visited, a:active {
-	text-decoration: none;
-	color: white;
-}
-
 #search_box{
-	border-radius: .2em;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 20px;
+	vertical-align: middle;
+	width: 300px;
+	font-size: 13px;
+	min-height: 30px;
+	font-weight: normal;
 	border: none;
-	height: 1.5em;
-
+	box-shadow: none;
+	border-radius: 3px;
+	outline: none;
 	/* create space between box and button */
 	margin-right: .25em;
-	background-color: gray;
+	background-color: #313438;
 
 	/* text inputed by user is white */
 	color: white;
-	font-size: 2em;
 
 	/*0 T & B - 1em R & L */
-	padding: 0 .25em;
+/*	padding: 0 .25em;*/
 }
 
 input::placeholder {
-  color: #D3D3D3;
-  font-style: italic;
+  color: #707275;
 }
 
 #button_id {
 	background-color: white;
 	border: none;
 	color: black;
-	font-size: 1.25em;
 	border-radius: .4em;
 }
 
 main {
-	margin-top: 40px;
 	text-align: center;
 }
 
 #intro {
-	margin-right: 40px;
-	margin-left: 40px;
-	font-size: 24px;
-	text-align: left;
-}
-
-a:link#username {
-	text-decoration: none;
-	color: black;
-}
-
-a:visited#username {
-	text-decoration: none;
-	color: black;
-}
-
-a:hover#username {
-	text-decoration: none;
-	color: black;
-}
-
-a:active#username {
-	text-decoration: none;
-	color: black;
+	margin-right: 2em;
+	margin-left: 2em;
+	font-size: 20px;
 }
 
 #pic {
@@ -145,33 +138,40 @@ a:active#username {
 }
 
 footer {
-	margin-top: 20px;
-	padding: 0.1em 1em 2.2em 1em;
-	color: white;
-	background-color: black;
-  bottom: 0;
-  width: 100%;
+	padding-right: 16px;
+	padding-left: 16px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	max-width: 1012px;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	border-color: #eaecef;
+	border-top: 1px #e1e4e8 solid;
 }
 
 footer ul {
+	display: flex;
 	list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 12px;
+	color: #586069;
 }
 
-footer ul li a {
-	display: inline;
-	float: left;
-	padding-right: 50px;
+footer ul li {
+	margin-right: auto;
+	margin-left: auto;
 }
 
-footer a:link, a:hover, a:visited, a:active {
+footer a:link, footer a:hover, footer a:visited, footer a:active {
 	text-decoration: none;
-	color: white;
+	color: #586069;
 }
 
 @media screen and (max-width: 1005px) {
 
-	nav ul {		
-		float: none;		
+	nav ul {				
 		display: block;		
 		text-align: center;		
 		width: 100%;	
@@ -179,39 +179,15 @@ footer a:link, a:hover, a:visited, a:active {
 	}		
 
 	nav li {
-		padding: .25em 0 .25em 0;
+		padding: 3px 0 3px 0;
 	}
 
-	#text {
-		font-size: 1em;
-	}
-
-	#search_box{
-		border-radius: .2em;
-		border: none;
-		height: 1.5em;
-		font-size: 1em;
-	}
-
-	#button_id {
-		font-size: 1em;
-		border-radius: .4em;
-}
-
-
-	footer {
-		padding-bottom: 7px;
-		margin: 0;
-	}
-	
-	footer ul li a {
-		display: block;
-		float: none;
-		text-align: center;
-		width: 100%;
-		margin: 0;
-		padding: 3px;
-	}
+	footer ul {				
+		display: block;		
+		text-align: center;		
+		width: 100%;	
+		height: 100%	
+	}		
 }
 
 

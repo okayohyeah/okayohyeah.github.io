@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
 </head>
 <body>
 	<nav>
@@ -19,7 +19,7 @@
 				<a href="jsonactivity.html">Whose Who of GitHub</a>
 			</li>
 			<li>
-				<input id="search_box" type="input_username" placeholder="GitHub Username">
+				<input id="search_box" type="input_username" autocapitalize="off" placeholder="GitHub Username">
 				<button type="button" id="button_id" onClick="getUsername()">Search</button>
 			</li>
 		</ul>
@@ -41,27 +41,30 @@
 
 		<div id="following"></div>	
 		<div id="following_avatar"></div>
+
+		<div id="intro">
+			<p><strong>Whose Who of GitHub</strong> allows you to search for a GitHub user by their unique username.</p>
+
+			<p>You will see their name, username, avatar, location, number of followers and following.</p>
+
+			<p>GitHub has over 3 million users worldwide creating and collaborating on projects.</p>
+		</div>
 	</main>
-
-	<div id="intro">
-		<p>GitHub has over 3 million users worldwide creating and collaborating on projects. Each registered user has a unique username.</p>
-
-		<p>Whose Who of GitHub allows you to search for a user by their unique username.</p>
-
-		<p>Once a valid username is typed and submitted, their profile will appear with their name, username, avatar, their location, the number of followers and avatars, and the number of users they are following along with their avatars.</p>
-
-		<p>To visit a user's GitHub page, click onto their avatar.</p>
-	</div>
 	
 	<footer>
 		<ul>
 			<li>
+				&copy; 2017 Katherine Oh
+			</li>
+			<li>
 				<a href="http://www.github.com/okayohyeah" target="_blank">Created by: @okayohyeah</a>
 			</li>
 			<li>
-				<a href="http://www.github.com" target="_blank">Sign up with GitHub</a>
+				<a href="http://www.github.com" target="_blank">Join GitHub</a>
 			</li>
 		</ul>
+	
+
 	</footer>
 </body>
 <script src="jsonhandling.js"></script>
