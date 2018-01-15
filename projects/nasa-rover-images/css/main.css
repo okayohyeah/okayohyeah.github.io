@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+}
+
+body { 
+  color: #FFFFEA;
+
+  /* The image used */
+  background-image: url(../images/rover.jpg);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+nav {
+	font-family: 'Graduate', cursive;
+}
+
+.navbar {
+	background-color: #7B5F4B;
+	border: none;
+	border-radius: 0;
+  display: flex; 
+  justify-content: center;
+}
+
+main {
+  padding-top: 50px;
+  font-family: Quicksand, sans-serif;
+}
+
+.form-group {
+  display: flex; 
+  justify-content: center;
+}
+
+/* Validation Warning */
+.warning {
+  text-align: center;
+  color: #FF6933;
+  font-size:1.25em;
+  vertical-align:middle;
+  background-color: #FFE5DD;
+  padding: 4px;
+  border: #CCB7B1 solid 1px;
+  border-radius: 5px;
+  text-shadow: none;
+  margin-left: 10px;
+
+}
+
+/* Width of Select Drop-Down List */
+.rover-camera {
+  width: 25%;
+}
+
+.input-sol {
+  width: 15%;
+}
+
+#submit {
+  width: 15%;
+}
+
+#message {
+  text-align: center;
+  color: #FF6933;
+  font-size:1.5em;
+}
+.mars-pics {
+  border-radius: 4px;
+}
+
+.text-about {
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size: 25px;
+}

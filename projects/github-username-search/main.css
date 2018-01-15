@@ -138,6 +138,11 @@ main {
 	margin-bottom: 20px;
 }
 
+#warning {
+	color: red;
+	font-size:1.5em;
+}
+
 footer {
 	padding-right: 16px;
 	padding-left: 16px;

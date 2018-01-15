@@ -1,0 +1,26 @@
+Assignment Tasks
+
+TODO:
+
+* Using destructuring to parse the JSON response
+	** Display different image search results 
+
+* Use a mouseover event to make captions appear
+	** For each image search result
+
+* Use a default value for when a user doesn't input anything in the search box
+
+* Use template strings to display all the text on the page
+
+DONE:
+
+* Pull data from the NASA Image API using AJAX
+	** Use Arrow Functions for all callbacks
+
+* Handle 200, 400, 500 response errors using Promises
+
+* Save previous searches using the DOM localStorage API
+
+RESOURCES:
+https://api.nasa.gov/api.html#Images
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
