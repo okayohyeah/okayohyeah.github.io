@@ -1,3 +1,5 @@
+
+
 var cameras_by_rovers = {
 
 	curiosity: [
@@ -53,21 +55,21 @@ function validateChoices() {
 	user_sol = document.getElementById("sol").value;
 
 	if (user_rover == "") {
-		document.getElementById("rover-warning").innerText = "Please Select a Rover";
+		document.getElementById("rover-warning").innerText = "* Please Select a Rover";
 		return isValid = false;
 	} else {
 		document.getElementById("rover-warning").innerText = "";
 	}
 
 	if (user_camera == "") {
-		document.getElementById("camera-warning").innerText = "Please Select a Camera";
+		document.getElementById("camera-warning").innerText = "* Please Select a Camera";
 		return isValid = false;
 	} else {
 		document.getElementById("camera-warning").innerText = "";
 	}
 
 	if (user_sol == "") {
-		document.getElementById("sol-warning").innerText = "Please Enter a Number";
+		document.getElementById("sol-warning").innerText = "* Please Enter a Number";
 		return isValid = false;
 	} else {
 		document.getElementById("sol-warning").innerText = "";
@@ -145,6 +147,8 @@ function getUserChoice() {
 			if (obj.photos.length === 0) {
 				document.getElementById("message").innerText = "Sorry, the " + user_rover.toUpperCase() + " did not take any pictures with the " + camera_full_name.toUpperCase() + " on Martian sol day " + user_sol +".";
 			} else {
+        //clear message
+        document.getElementById("message").innerText = "";
 
 				// Find first photo's image source from response
 				image_source = obj.photos[0].img_src;
@@ -171,8 +175,8 @@ function displayImg(source) {
 	display_image = document.createElement("img");
 	display_image.setAttribute("src", source);
 	display_image.setAttribute("class", "mars-pics");
-	display_image.setAttribute("width", "15%");
-	display_image.setAttribute("height", "15%");
+	display_image.setAttribute("width", "25%");
+	display_image.setAttribute("height", "25%");
 	display_image.setAttribute("alt", "Mars Photo");
 	display_image.setAttribute("hspace", "1%");
 	document.getElementById("results").appendChild(display_image);

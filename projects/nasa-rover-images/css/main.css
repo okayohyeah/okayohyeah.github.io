@@ -32,51 +32,40 @@ nav {
   justify-content: center;
 }
 
+.navbar-brand {
+  font-size: 30px
+}
+
 main {
-  padding-top: 50px;
+/*  padding-top: 15px;*/
   font-family: Quicksand, sans-serif;
 }
 
-.form-group {
+.lead {
+  font-size: 30px;
+}
+
+/*.form-group {
   display: flex; 
   justify-content: center;
-}
+}*/
 
 /* Validation Warning */
 .warning {
-  text-align: center;
   color: #FF6933;
   font-size:1.25em;
   vertical-align:middle;
-  background-color: #FFE5DD;
-  padding: 4px;
-  border: #CCB7B1 solid 1px;
-  border-radius: 5px;
-  text-shadow: none;
   margin-left: 10px;
 
 }
 
-/* Width of Select Drop-Down List */
-.rover-camera {
-  width: 25%;
-}
-
-.input-sol {
-  width: 15%;
-}
-
-#submit {
-  width: 15%;
-}
-
 #message {
-  text-align: center;
   color: #FF6933;
-  font-size:1.5em;
+  font-size:1.25em;
 }
 .mars-pics {
   border-radius: 4px;
+  padding-bottom: 15px;
 }
 
 .text-about {
