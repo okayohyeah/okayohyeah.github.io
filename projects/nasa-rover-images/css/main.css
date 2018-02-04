@@ -46,6 +46,8 @@ main {
 
 .lead {
   font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* Loader Gif */
@@ -69,6 +71,7 @@ main {
   color: #FF6933;
   font-size:1.25em;
 }
+
 .mars-pics {
   border-radius: 4px;
   padding-bottom: 25px;
