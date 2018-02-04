@@ -1,5 +1,3 @@
-
-
 var cameras_by_rovers = {
 
 	curiosity: [
@@ -107,9 +105,6 @@ function getUserChoice() {
 				}
 		})
 		.then(obj => {
-			// check object returned
-			console.log(obj);
-
 			// switch camera value to the camera's full name
 			var camera_full_name;
 
@@ -145,13 +140,18 @@ function getUserChoice() {
 
 			// check for any photos are returned
 			if (obj.photos.length === 0) {
-				document.getElementById("message").innerText = "Sorry, the " + user_rover.toUpperCase() + " did not take any pictures with the " + camera_full_name.toUpperCase() + " on Martian sol day " + user_sol +".";
+				document.getElementById("message").innerText = `Sorry, the ${user_rover.toUpperCase()} did not take any pictures with the ${camera_full_name.toUpperCase()} on Martian sol day ${user_sol}.`;
 			} else {
         //clear message
         document.getElementById("message").innerText = "";
 
-				// Find first photo's image source from response
-				image_source = obj.photos[0].img_src;
+        // Find random image from response
+        var imgArray = obj.photos;
+        var randomImg = imgArray[Math.floor(Math.random()*imgArray.length)];
+				image_source = randomImg.img_src;
+
+        // Image title
+        var img_title = `The ${randomImg.rover.name}'s ${randomImg.camera.full_name} took this photo on Martian sol day ${randomImg.sol}`;
 
 				i++;
 				img_key = "image" + i;
@@ -162,16 +162,13 @@ function getUserChoice() {
 				var display_src = localStorage.getItem(img_key);
 
 				// Create img element with image source set
-				displayImg(display_src);
+				displayImg(display_src, img_title);
 			}
-
 		})
 	}
 }
 
-
-
-function displayImg(source) {
+function displayImg(source, title) {
 	display_image = document.createElement("img");
 	display_image.setAttribute("src", source);
 	display_image.setAttribute("class", "mars-pics");
@@ -179,8 +176,8 @@ function displayImg(source) {
 	display_image.setAttribute("height", "25%");
 	display_image.setAttribute("alt", "Mars Photo");
 	display_image.setAttribute("hspace", "1%");
+  display_image.setAttribute("title", title)
 	document.getElementById("results").appendChild(display_image);
-
 }
 
 

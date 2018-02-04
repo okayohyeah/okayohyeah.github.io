@@ -25,8 +25,10 @@ nav {
 }
 
 .navbar {
-	background-color: #7B5F4B;
+	background-color: transparent;
+  background: transparent;
 	border: none;
+  padding-top: 20px;
 	border-radius: 0;
   display: flex; 
   justify-content: center;
@@ -44,11 +46,6 @@ main {
 .lead {
   font-size: 30px;
 }
-
-/*.form-group {
-  display: flex; 
-  justify-content: center;
-}*/
 
 /* Validation Warning */
 .warning {
@@ -69,8 +66,34 @@ main {
 }
 
 .text-about {
-  padding-top: 50px;
+  padding-top: 20px;
   padding-left: 10%;
   padding-right: 10%;
-  font-size: 25px;
+  font-size: 20px;
+}
+
+footer {
+  padding-top: 60px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+
+footer ul {
+  display: flex;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+footer ul li {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+footer a:link, footer a:hover, footer a:visited, footer a:active {
+  color: #FFFFEA;
+  text-decoration: none;
 }
