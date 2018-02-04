@@ -179,8 +179,8 @@ function displayImg(source, title) {
 	display_image = document.createElement("img");
 	display_image.setAttribute("src", source);
 	display_image.setAttribute("class", "mars-pics");
-	display_image.setAttribute("width", "20%");
-	display_image.setAttribute("height", "20%");
+	display_image.setAttribute("width", "27%");
+	display_image.setAttribute("height", "27%");
 	display_image.setAttribute("alt", "Mars Photo");
 	display_image.setAttribute("hspace", "2%");
   display_image.setAttribute("title", title)

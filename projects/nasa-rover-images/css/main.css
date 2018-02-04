@@ -72,6 +72,11 @@ main {
   font-size:1.25em;
 }
 
+#results {
+  padding-top: 15px;
+  padding-left: 25px;
+}
+
 .mars-pics {
   border-radius: 4px;
   padding-bottom: 25px;
