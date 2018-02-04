@@ -45,6 +45,7 @@ var user_rover;
 var user_camera;
 var user_sol;
 
+// Validations
 function validateChoices() {
 
 	isValid = true;
@@ -86,17 +87,23 @@ var display_image;
 var img_key;
 var i = 0;
 
+// Process user input
 function getUserChoice() {
 
 	 // Validation - User Selection and Input 
   validateChoices();
 
   if (isValid == true) {
-		fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + user_rover + "/photos?sol=" + user_sol + "&camera=" + user_camera + "&api_key=b3nTdX2bbNt2aCfKTy3y4elLcQxT5wPIfEMSrJ6T")
+    // Show Loading Gif
+    document.getElementById("loader").style = "display: inline";
+		
+    fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + user_rover + "/photos?sol=" + user_sol + "&camera=" + user_camera + "&api_key=b3nTdX2bbNt2aCfKTy3y4elLcQxT5wPIfEMSrJ6T")
 		//DEMO_KEY
 
 		.then(response_obj => {
 				if (response_obj.status === 200) {
+          //Hide Loading Gif
+          document.getElementById("loader").style = "display: none";
 					return response_obj.json();
 				} else if (response_obj === 400) {
 					document.getElementById("message").innerText = "Sorry, we sent a bad request to the server. Please, try again.";
@@ -137,14 +144,14 @@ function getUserChoice() {
 					camera_full_name = "Miniature Thermal Emission Sepectrometer"
 					break;
 			}
-
-			// check for any photos are returned
+    			
+      // check for any photos are returned
 			if (obj.photos.length === 0) {
 				document.getElementById("message").innerText = `Sorry, the ${user_rover.toUpperCase()} did not take any pictures with the ${camera_full_name.toUpperCase()} on Martian sol day ${user_sol}.`;
 			} else {
         //clear message
         document.getElementById("message").innerText = "";
-
+        
         // Find random image from response
         var imgArray = obj.photos;
         var randomImg = imgArray[Math.floor(Math.random()*imgArray.length)];
@@ -160,8 +167,8 @@ function getUserChoice() {
 
 				// Retrieve image source from local storage
 				var display_src = localStorage.getItem(img_key);
-
-				// Create img element with image source set
+				
+        // Create img element with image source set
 				displayImg(display_src, img_title);
 			}
 		})
@@ -172,10 +179,10 @@ function displayImg(source, title) {
 	display_image = document.createElement("img");
 	display_image.setAttribute("src", source);
 	display_image.setAttribute("class", "mars-pics");
-	display_image.setAttribute("width", "25%");
-	display_image.setAttribute("height", "25%");
+	display_image.setAttribute("width", "20%");
+	display_image.setAttribute("height", "20%");
 	display_image.setAttribute("alt", "Mars Photo");
-	display_image.setAttribute("hspace", "1%");
+	display_image.setAttribute("hspace", "2%");
   display_image.setAttribute("title", title)
 	document.getElementById("results").appendChild(display_image);
 }
