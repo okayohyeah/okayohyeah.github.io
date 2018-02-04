@@ -46,6 +46,12 @@ nav a:link, nav a:hover, nav a:visited, nav a:active {
 	color: white;
 }
 
+/* Loader Gif */
+#loader {
+  display: none;
+  color: green;
+}
+
 #logo {
 	fill: currentColor;
 	color: #fff;

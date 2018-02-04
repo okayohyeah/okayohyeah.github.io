@@ -29,13 +29,19 @@ function getUsername() {
 	usernameEntered();
 
 	if (isValid == true) {
+    // Show Loading Gif
+    document.getElementById("loader").style = "display: inline";
 	 
 		fetch("https://api.github.com/users/" + input_username)
 		.then(function(response_obj) {
 			return response_obj.json();
 		})
 		.then(function(obj) {		
-			document.getElementById("pic").src = obj.avatar_url;
+    
+      //Hide Loading Gif
+      document.getElementById("loader").style = "display: none";
+			
+      document.getElementById("pic").src = obj.avatar_url;
 			document.getElementById("a_pic").setAttribute("href", "http://www.github.com/" + obj.login);
 			document.getElementById("username").innerText = "@" +obj.login;
 			
